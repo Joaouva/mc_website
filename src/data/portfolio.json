@@ -1,0 +1,81 @@
+{
+  "general": {
+    "name": "Manuel Cruchinho",
+    "title": "Arquiteto",
+    "studioName": "MCA - Manuel Cruchinho Arquitectos",
+    "logoUrl": "/logos/logo.png",
+    "profileImage": "/images/profile.png",
+    "bio": [
+      "Arquiteto apaixonado por desenho e viagens. Vejo as viagens como fontes de inspiração, expandindo os meus horizontes criativos.",
+      "Em 2014 terminei o mestrado em arquitetura no Instituto Superior Técnico, onde adquiri os primeiros conhecimentos técnicos.",
+      "Trabalhei cerca de oito anos no atelier SalaSul, onde liderei diversos projetos de reabilitação de edifícios e construções novas.",
+      "Em 2022 decidi embarcar numa nova aventura e abri o meu próprio atelier MCA - Manuel Cruchinho Arquitectos.",
+      "Acredito que cada projeto arquitetónico deve refletir a identidade e necessidades únicas de cada pessoa.",
+      "A minha visão é tornar-me uma referência no mercado, alguém em quem as pessoas confiem e que vejam como guia para concretizar os seus projetos arquitetónicos com excelência.",
+      "Atualmente tenho um interesse crescente no desenvolvimento de projetos na área da sustentabilidade por ser crucial para construir um futuro mais equilibrado e responsável."
+    ]
+  },
+  "contact": {
+    "email": "geral@mc-arquitectos.com",
+    "phone": "+351 210 000 000",
+    "address": "Rua Professor Manuel Valadares, nº13A\n1750-232 Lisboa",
+    "instagram": "https://www.instagram.com/mc__arquitectos/?hl=en",
+    "linkedin": "https://www.linkedin.com/in/manuel-cruchinho"
+  },
+  "projects": [
+    {
+      "slug": "project-one",
+      "title": "Project One",
+      "category": "residential",
+      "year": "2024",
+      "location": "Portugal",
+      "description": "A modern residential project featuring clean lines, natural materials, and thoughtful integration of light and space.",
+      "tags": ["Residential", "Minimalist", "Sustainable"],
+      "images": [
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200"
+      ]
+    },
+    {
+      "slug": "project-two",
+      "title": "Project Two",
+      "category": "interior",
+      "year": "2023",
+      "location": "Paris, France",
+      "description": "An elegant interior redesign maximizing volume, textures, and introducing custom minimal oak cabinetry.",
+      "tags": ["Interior Design", "Renovation", "Contemporary"],
+      "images": [
+        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200",
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200"
+      ]
+    },
+    {
+      "slug": "project-three",
+      "title": "Project Three",
+      "category": "urban",
+      "year": "2023",
+      "location": "Tokyo, Japan",
+      "description": "A public landscape architecture proposal incorporating sustainable rainwater harvesting systems and modular wooden pavilions.",
+      "tags": ["Urban Planning", "Public Space", "Architecture"],
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200",
+        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200",
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200"
+      ]
+    },
+    {
+      "slug": "project-four",
+      "title": "Project Four",
+      "category": "residential",
+      "year": "2022",
+      "location": "London, UK",
+      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "tags": ["Residential", "Minimalist", "Sustainable"],
+      "images": [
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200",
+        "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200"
+      ]
+    }
+  ]
+}

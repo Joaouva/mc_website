@@ -1,0 +1,168 @@
+.projectsWrapper {
+  padding: 60px 0 100px 0;
+}
+
+.titleBlock {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.titleBlock p {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta);
+  margin-bottom: 12px;
+}
+
+.titleBlock h1 {
+  font-size: 2.8rem;
+  font-weight: 300;
+}
+
+/* Category Filter Bar */
+.filterBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.filterBtn {
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  padding: 8px 24px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-charcoal-muted);
+  cursor: pointer;
+  border-radius: 20px;
+  transition: var(--transition-smooth);
+}
+
+.filterBtn:hover {
+  border-color: var(--text-charcoal);
+  color: var(--text-charcoal);
+  background-color: rgba(42, 38, 33, 0.02);
+}
+
+.activeFilterBtn {
+  border-color: var(--accent-terracotta);
+  color: var(--accent-terracotta);
+  background-color: var(--accent-rose-soft);
+}
+
+/* Projects Grid Layout */
+.grid {
+  display: grid;
+  grid-template-cols: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.card {
+  display: block;
+  cursor: pointer;
+  animation: cardFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  background-color: var(--bg-sand-darker);
+  margin-bottom: 20px;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(42, 38, 33, 0);
+  transition: background-color 0.4s ease;
+  z-index: 2;
+}
+
+.card:hover .overlay {
+  background-color: rgba(42, 38, 33, 0.12);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.projectTitle {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-charcoal);
+  transition: var(--transition-fast);
+}
+
+.card:hover .projectTitle {
+  color: var(--accent-terracotta);
+}
+
+.categoryLabel {
+  font-size: 0.72rem;
+  color: var(--text-charcoal-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.yearLabel {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--accent-terracotta);
+}
+
+.noProjects {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--text-charcoal-muted);
+  font-size: 1.1rem;
+}

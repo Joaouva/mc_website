@@ -1,0 +1,183 @@
+.container {
+  padding: 60px 0 100px 0;
+  max-width: 1000px;
+}
+
+.titleBlock {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.titleBlock p {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-terracotta);
+  margin-bottom: 12px;
+}
+
+.titleBlock h1 {
+  font-size: 2.8rem;
+  font-weight: 300;
+}
+
+/* Two-column Contact Grid */
+.grid {
+  display: grid;
+  grid-template-cols: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+/* Left Sidebar: Contact Info */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.infoSection h2 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-charcoal);
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 8px;
+}
+
+.emailLink {
+  font-size: 1.15rem;
+  color: var(--text-charcoal);
+  font-weight: 400;
+  transition: var(--transition-fast);
+}
+
+.emailLink:hover {
+  color: var(--accent-terracotta);
+}
+
+.addressText {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-charcoal-muted);
+}
+
+.socialList {
+  display: flex;
+  gap: 16px;
+}
+
+.socialBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-medium);
+  border-radius: 20px;
+  color: var(--text-charcoal);
+  transition: var(--transition-smooth);
+}
+
+.socialBtn:hover {
+  border-color: var(--accent-terracotta);
+  color: var(--accent-terracotta);
+  background-color: var(--accent-rose-soft);
+}
+
+/* Right Sidebar: Contact Form */
+.formCard {
+  background: white;
+  padding: 40px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 30px rgba(42, 38, 33, 0.03);
+}
+
+@media (max-width: 480px) {
+  .formCard {
+    padding: 24px;
+  }
+}
+
+.formTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: var(--text-charcoal);
+  letter-spacing: 0.1em;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Submit loading state */
+.btnText {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success Confirmation Overlay */
+.successMessage {
+  text-align: center;
+  padding: 40px 0;
+  animation: successFade 0.5s ease-out forwards;
+}
+
+@keyframes successFade {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.successIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  background-color: var(--accent-rose-soft);
+  color: var(--accent-terracotta);
+  font-size: 1.5rem;
+  border-radius: 50%;
+  margin: 0 auto 24px auto;
+}
+
+.successTitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-charcoal);
+  margin-bottom: 12px;
+}
+
+.successText {
+  font-size: 0.95rem;
+  color: var(--text-charcoal-muted);
+  line-height: 1.6;
+}

@@ -1,0 +1,277 @@
+/* Custom Design System for Manuel Cruchinho (MC Portfolio) */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@200;300;400;500&display=swap');
+
+:root {
+  /* Color Palette (Curated HSL values for seamless blending) */
+  --bg-sand: HSL(37, 27%, 94%); /* Elegant linen warm beige background */
+  --bg-sand-darker: HSL(37, 20%, 88%); /* Deepened sand for contrast areas */
+  --bg-sand-lighter: HSL(37, 30%, 97%); /* Very soft light cream */
+  --text-charcoal: HSL(35, 12%, 18%); /* Warm charcoal brown (high readability, softer than pure black) */
+  --text-charcoal-muted: HSL(35, 8%, 45%); /* Secondary text style */
+  --accent-terracotta: HSL(12, 48%, 48%); /* Terracotta architectural highlight */
+  --accent-terracotta-hover: HSL(12, 53%, 43%);
+  --accent-rose-soft: HSL(12, 50%, 93%); /* Very soft warm blush tint */
+  
+  --border-light: rgba(42, 38, 33, 0.08);
+  --border-medium: rgba(42, 38, 33, 0.16);
+  --glass-bg: rgba(244, 240, 234, 0.65);
+  
+  /* Fonts */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Layout Constants */
+  --header-height: 80px;
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: all 0.2s ease-out;
+}
+
+/* Base Styles & Modern Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-sand);
+  color: var(--text-charcoal);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-sand);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-sand-darker);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-charcoal-muted);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.serif-title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+p {
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.main-content {
+  padding-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height) - 100px);
+}
+
+/* Header & Navigation */
+.header-glass {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  z-index: 1000;
+  transition: var(--transition-smooth);
+}
+
+/* Buttons */
+.btn-minimal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--text-charcoal);
+  background: transparent;
+  color: var(--text-charcoal);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-minimal:hover {
+  background: var(--text-charcoal);
+  color: var(--bg-sand);
+}
+
+.btn-terracotta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--accent-terracotta);
+  background: var(--accent-terracotta);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-terracotta:hover {
+  background: var(--accent-terracotta-hover);
+  border-color: var(--accent-terracotta-hover);
+}
+
+/* Forms */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-charcoal);
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--bg-sand-lighter);
+  border: 1px solid var(--border-medium);
+  color: var(--text-charcoal);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  transition: var(--transition-fast);
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-terracotta);
+  background-color: white;
+  box-shadow: 0 0 0 2px var(--accent-rose-soft);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Watercolor Canvas Effect */
+.watercolor-bg {
+  position: relative;
+  background-color: var(--bg-sand);
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(192, 92, 70, 0.04) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(192, 92, 70, 0.03) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(244, 240, 234, 0.8) 0px, transparent 100%);
+  background-size: cover;
+}
+
+/* Image Hover Zoom */
+.image-zoom-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-zoom-img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-zoom-container:hover .image-zoom-img {
+  transform: scale(1.04);
+}
+
+/* Slide-up animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Micro-timeline */
+.timeline {
+  position: relative;
+  border-left: 1px solid var(--border-medium);
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -29px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-terracotta);
+  border: 1px solid var(--bg-sand);
+}
