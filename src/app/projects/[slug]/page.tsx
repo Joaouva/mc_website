@@ -9,6 +9,13 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+// Generate Static Parameters for compile-time static HTML export
+export async function generateStaticParams() {
+  return portfolioData.projects.map((project) => ({
+    slug: project.slug
+  }));
+}
+
 // Generate Dynamic Metadata for prime SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
