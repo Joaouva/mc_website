@@ -55,12 +55,11 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: next
+        # static_site_generator: next is intentionally omitted: this project manages its
+        # own next.config.ts (output, basePath, images.unoptimized, env, remotePatterns).
+        # That auto-injection feature does not parse a .ts config file, silently falls back
+        # to a blank synthesized config, and was clobbering our custom `env` field in
+        # production builds (Team/About page images 404'd on GitHub Pages as a result).
       - name: Restore cache
         uses: actions/cache@v4
         with:
