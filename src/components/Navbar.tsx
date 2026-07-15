@@ -15,6 +15,7 @@ export default function Navbar() {
   const navItems = [
     { label: 'PROJECTS', path: '/projects' },
     { label: 'ABOUT ME', path: '/practice' },
+    { label: 'TEAM', path: '/team' },
     { label: 'CONTACT', path: '/contact' }
   ];
 

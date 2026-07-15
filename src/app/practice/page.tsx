@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './practice.module.css';
 import portfolioData from '@/data/portfolio.json';
+import { withBasePath } from '@/lib/basePath';
 
 export const metadata = {
   title: 'About',
@@ -23,7 +24,7 @@ export default function PracticePage() {
           <div className={styles.watercolorHalo}></div>
           <div className={styles.imageInnerWrapper}>
             <Image
-              src={general.profileImage}
+              src={withBasePath(general.profileImage)}
               alt={general.name}
               fill
               className={styles.profileImage}

@@ -26,10 +26,20 @@ export interface Project {
   images: string[];
 }
 
+export interface TeamMember {
+  slug: string;
+  name: string;
+  role: string;
+  photo: string;
+  bio: string;
+  active: boolean;
+}
+
 export interface PortfolioData {
   general: GeneralInfo;
   contact: ContactInfo;
   projects: Project[];
+  team: TeamMember[];
 }
 export type ProjectCategory = 'residential' | 'interior' | 'urban';
 export const CATEGORY_LABELS: Record<string, string> = {

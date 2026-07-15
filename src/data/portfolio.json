@@ -77,5 +77,39 @@
         "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200"
       ]
     }
+  ],
+  "team": [
+    {
+      "slug": "ana-silva",
+      "name": "Ana Silva",
+      "role": "Arquiteta Sénior",
+      "photo": "/images/team/ana-silva.svg",
+      "bio": "Na equipa desde a fundação da MCA em 2022, coordena os projetos de reabilitação e acompanha as obras em fase de execução.",
+      "active": true
+    },
+    {
+      "slug": "tiago-fernandes",
+      "name": "Tiago Fernandes",
+      "role": "Arquiteto de Projeto",
+      "photo": "/images/team/tiago-fernandes.svg",
+      "bio": "Responsável pelo desenvolvimento técnico dos projetos residenciais, com um olhar atento ao detalhe construtivo e à sustentabilidade.",
+      "active": true
+    },
+    {
+      "slug": "rita-gomes",
+      "name": "Rita Gomes",
+      "role": "Designer de Interiores",
+      "photo": "/images/team/rita-gomes.svg",
+      "bio": "Traz para os projetos uma sensibilidade única para materiais, texturas e luz, moldando o carácter interior de cada espaço.",
+      "active": true
+    },
+    {
+      "slug": "pedro-alves",
+      "name": "Pedro Alves",
+      "role": "Arquiteto Júnior (2022 — 2024)",
+      "photo": "/images/team/pedro-alves.svg",
+      "bio": "Integrou a equipa nos primeiros dois anos do atelier, tendo contribuído para os primeiros projetos residenciais da MCA.",
+      "active": false
+    }
   ]
 }

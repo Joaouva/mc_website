@@ -15,7 +15,8 @@ export default function AdminPage() {
   const [data, setData] = useState<PortfolioData>({
     general: { name: '', title: '', studioName: '', logoUrl: '', profileImage: '', bio: [] },
     contact: { email: '', phone: '', address: '', instagram: '', linkedin: '' },
-    projects: []
+    projects: [],
+    team: []
   });
 
   // 3. UI Active States
