@@ -1,0 +1,24 @@
+{
+  "needsYou": [
+    {
+      "topic": "Scope",
+      "recommendation": "Redesign the public site first and leave /admin functionally unchanged.",
+      "reason": "The admin UI is an internal tool and has no visual counterpart in the reference."
+    },
+    {
+      "topic": "Font",
+      "recommendation": "Use General Sans through Fontshare, matching the reference's neutral editorial tone.",
+      "reason": "It replaces the current decorative serif/Outfit pairing and establishes the reference's visual character across every route."
+    },
+    {
+      "topic": "Navigation",
+      "recommendation": "Adopt the left desktop rail and a compact mobile overlay, adapted to MCA's existing routes.",
+      "reason": "This is the reference's strongest structural trait and will make the redesign meaningfully closer without copying its branded assets."
+    },
+    {
+      "topic": "Contact form",
+      "recommendation": "Keep its current visual interaction but do not claim delivery until a submission destination is chosen.",
+      "reason": "The existing site has no production form backend."
+    }
+  ]
+}

@@ -1,8 +1,16 @@
 /* Custom Design System for Manuel Cruchinho (MC Portfolio) */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Outfit:wght@200;300;400;500&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,450,500&display=swap');
 
 :root {
+  --site-ink: #101010;
+  --site-paper: #efeeeb;
+  --site-rule: rgba(16, 16, 16, 0.18);
+  --site-muted: rgba(16, 16, 16, 0.58);
+  --site-rail-width: clamp(11rem, 19vw, 17rem);
+  --space-page: clamp(1.25rem, 4vw, 3.5rem);
+  --space-section: clamp(5rem, 10vw, 8rem);
+  --space-major: clamp(7rem, 15vw, 11rem);
   /* Color Palette (Curated HSL values for seamless blending) */
   --bg-sand: HSL(37, 27%, 94%); /* Elegant linen warm beige background */
   --bg-sand-darker: HSL(37, 20%, 88%); /* Deepened sand for contrast areas */
@@ -18,8 +26,8 @@
   --glass-bg: rgba(244, 240, 234, 0.65);
   
   /* Fonts */
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   
   /* Layout Constants */
   --header-height: 80px;
@@ -39,11 +47,11 @@ html {
 }
 
 body {
-  background-color: var(--bg-sand);
-  color: var(--text-charcoal);
+  background-color: var(--site-paper);
+  color: var(--site-ink);
   font-family: var(--font-sans);
-  font-weight: 300;
-  line-height: 1.6;
+  font-weight: 450;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -69,9 +77,9 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
-  font-weight: 300;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 450;
+  letter-spacing: -0.03em;
+  text-transform: none;
 }
 
 .serif-title {
@@ -94,10 +102,9 @@ a {
 
 /* Layout Utilities */
 .container {
-  width: 100%;
-  max-width: 1440px;
+  width: min(100%, 1280px);
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--space-page);
 }
 
 @media (max-width: 768px) {
@@ -107,8 +114,13 @@ a {
 }
 
 .main-content {
-  padding-top: var(--header-height);
-  min-height: calc(100vh - var(--header-height) - 100px);
+  min-height: 100vh;
+  margin-left: var(--site-rail-width);
+}
+
+@media (max-width: 768px) {
+  .main-content { margin-left: 0; padding-top: var(--header-height); }
+  body > footer { margin-left: 0 !important; }
 }
 
 /* Header & Navigation */
@@ -212,13 +224,11 @@ a {
 
 /* Watercolor Canvas Effect */
 .watercolor-bg {
-  position: relative;
-  background-color: var(--bg-sand);
-  background-image: 
-    radial-gradient(at 10% 20%, rgba(192, 92, 70, 0.04) 0px, transparent 50%),
-    radial-gradient(at 90% 80%, rgba(192, 92, 70, 0.03) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(244, 240, 234, 0.8) 0px, transparent 100%);
-  background-size: cover;
+  background: var(--site-paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
 /* Image Hover Zoom */
