@@ -1,92 +1,54 @@
 'use client';
 
-import { useRouter, useSearchParams } from 'next/navigation';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 import styles from './projects.module.css';
 import portfolioData from '@/data/portfolio.json';
-import { Project, CATEGORY_LABELS } from '@/data/types';
+import { CATEGORY_LABELS, Project } from '@/data/types';
 
 export default function ProjectsList() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const activeCategory = searchParams.get('category') || 'all';
-
   const { projects } = portfolioData;
+  const [activeSlug, setActiveSlug] = useState(projects[0]?.slug ?? '');
+  const activeProject = projects.find((project) => project.slug === activeSlug) ?? projects[0];
 
-  // Filter projects based on the active category
-  const filteredProjects = activeCategory === 'all'
-    ? projects
-    : projects.filter(p => p.category.toLowerCase() === activeCategory.toLowerCase());
+  if (!activeProject) return null;
 
-  const handleCategoryChange = (category: string) => {
-    if (category === 'all') {
-      router.push('/projects');
-    } else {
-      router.push(`/projects?category=${category}`);
-    }
-  };
-
-  const categories = [
-    { key: 'all', label: 'ALL PROJECTS' },
-    { key: 'residential', label: 'RESIDENTIAL' },
-    { key: 'interior', label: 'INTERIOR | DESIGN' },
-    { key: 'urban', label: 'URBAN | PUBLIC' }
-  ];
+  const selectProject = (project: Project) => setActiveSlug(project.slug);
 
   return (
-    <div className="container">
-      {/* Category Navigation Bar */}
-      <div className={styles.filterBar}>
-        {categories.map((cat) => (
-          <button
-            key={cat.key}
-            onClick={() => handleCategoryChange(cat.key)}
-            className={`${styles.filterBtn} ${
-              activeCategory === cat.key ? styles.activeFilterBtn : ''
-            }`}
-          >
-            {cat.label}
-          </button>
-        ))}
-      </div>
+    <section className={styles.projects}>
+      <header className={styles.header}>
+        <p>Projetos</p>
+        <h1>Uma coleção de lugares pensados a partir do contexto.</h1>
+      </header>
 
-      {/* Projects Grid Display */}
-      {filteredProjects.length > 0 ? (
-        <div className={styles.grid}>
-          {filteredProjects.map((project: Project) => (
-            <Link
+      <div className={styles.layout}>
+        <div className={styles.pills} aria-label="Selecionar projeto">
+          {projects.map((project, index) => (
+            <button
+              className={`${styles.pill} ${project.slug === activeSlug ? styles.activePill : ''}`}
               key={project.slug}
-              href={`/projects/${project.slug}`}
-              className={styles.card}
+              onClick={() => selectProject(project)}
+              onMouseEnter={() => selectProject(project)}
+              onFocus={() => selectProject(project)}
+              aria-pressed={project.slug === activeSlug}
             >
-              <div className={styles.imageWrapper}>
-                <Image
-                  src={project.images[0]}
-                  alt={project.title}
-                  fill
-                  className={styles.image}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className={styles.overlay}></div>
-              </div>
-              <div className={styles.info}>
-                <div className={styles.meta}>
-                  <h2 className={styles.projectTitle}>{project.title}</h2>
-                  <span className={styles.categoryLabel}>
-                    {CATEGORY_LABELS[project.category] || project.category}
-                  </span>
-                </div>
-                <span className={styles.yearLabel}>{project.year}</span>
-              </div>
-            </Link>
+              <span>0{index + 1}</span>{project.title}
+            </button>
           ))}
         </div>
-      ) : (
-        <div className={styles.noProjects}>
-          <p>No projects found in this category.</p>
-        </div>
-      )}
-    </div>
+
+        <article className={styles.feature} key={activeProject.slug}>
+          <Link href={`/projects/${activeProject.slug}`} className={styles.imageLink} aria-label={`Ver ${activeProject.title}`}>
+            <Image src={activeProject.images[0]} alt={activeProject.title} fill priority sizes="(max-width: 768px) 100vw, 60vw" className={styles.featureImage} />
+          </Link>
+          <div className={styles.featureCopy}>
+            <div><p>{CATEGORY_LABELS[activeProject.category] ?? activeProject.category}</p><p>{activeProject.location} · {activeProject.year}</p></div>
+            <div><h2>{activeProject.title}</h2><p>{activeProject.description}</p><Link href={`/projects/${activeProject.slug}`} className={styles.detailLink}>Ver projeto <span>↘</span></Link></div>
+          </div>
+        </article>
+      </div>
+    </section>
   );
 }

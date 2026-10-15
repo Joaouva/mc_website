@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import portfolioData from '@/data/portfolio.json';
@@ -36,17 +37,12 @@ export default function RootLayout({
         </main>
 
         {/* Minimalist Architectural Footer */}
-        <footer style={{
-          padding: '60px 0 40px 0',
-          borderTop: '1px solid var(--border-light)',
-          marginTop: '80px',
-          backgroundColor: 'transparent'
-        }}>
+        <footer style={{ padding: 'var(--space-section) var(--space-page)', borderTop: '1px solid var(--site-rule)', marginLeft: 'var(--site-rail-width)' }}>
           <div className="container" style={{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: '24px'
+          gap: '16px'
           }}>
             {/* Minimal Logo Monogram */}
             <div style={{
@@ -55,11 +51,9 @@ export default function RootLayout({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              borderRadius: '50%',
-              backgroundColor: 'var(--text-charcoal)',
-              color: 'var(--bg-sand)',
-              fontSize: '0.75rem',
-              fontWeight: 400
+              color: 'var(--site-ink)',
+              fontSize: '1rem',
+              fontWeight: 500
             }}>
               MC
             </div>
@@ -72,10 +66,10 @@ export default function RootLayout({
               letterSpacing: '0.15em',
               textTransform: 'uppercase'
             }}>
-              <a href="/projects" style={{ opacity: 0.6 }}>Projects</a>
-              <a href="/practice" style={{ opacity: 0.6 }}>About Me</a>
-              <a href="/contact" style={{ opacity: 0.6 }}>Contact</a>
-              <a href="/admin" style={{ opacity: 0.6 }}>CMS</a>
+              <Link href="/projects" style={{ opacity: 0.6 }}>Projects</Link>
+              <Link href="/practice" style={{ opacity: 0.6 }}>About Me</Link>
+              <Link href="/contact" style={{ opacity: 0.6 }}>Contact</Link>
+              <Link href="/admin" style={{ opacity: 0.6 }}>CMS</Link>
             </div>
 
             {/* Copyright & Location */}
@@ -83,7 +77,7 @@ export default function RootLayout({
               textAlign: 'center',
               fontSize: '0.7rem',
               letterSpacing: '0.05em',
-              color: 'var(--text-charcoal-muted)',
+              color: 'var(--site-muted)',
               lineHeight: '1.8'
             }}>
               <p>© {currentYear} {portfolioData.general.studioName}. All rights reserved.</p>
