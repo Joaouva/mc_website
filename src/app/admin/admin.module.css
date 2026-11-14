@@ -28,6 +28,9 @@
   color: var(--text-charcoal-muted);
   margin-bottom: 28px;
 }
+.loginForm { display: flex; flex-direction: column; gap: .75rem; text-align: left; }
+.loginForm button { margin-top: .75rem; }
+.loginError { margin: 0; color: #a62828; }
 
 /* Dashboard Core Header */
 .dashboardHeader {
