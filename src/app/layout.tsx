@@ -1,8 +1,16 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import Link from 'next/link';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import portfolioData from '@/data/portfolio.json';
+
+const helveticaCondensed = localFont({
+  src: './fonts/HelveticaCondensed-Regular.ttf',
+  variable: '--font-helvetica-condensed',
+  display: 'swap',
+  weight: '400',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -26,7 +34,7 @@ export default function RootLayout({
   const currentYear = new Date().getFullYear();
 
   return (
-    <html lang="en">
+    <html lang="en" className={helveticaCondensed.variable}>
       <body className="watercolor-bg">
         {/* Navigation Bar */}
         <Navbar />

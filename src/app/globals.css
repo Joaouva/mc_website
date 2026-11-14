@@ -24,8 +24,8 @@
   --glass-bg: rgba(244, 240, 234, 0.65);
   
   /* Fonts */
-  --font-serif: 'Swis721 Cn BT', 'Swiss 721', 'Arial Narrow', Arial, sans-serif;
-  --font-sans: 'Swis721 Cn BT', 'Swiss 721', 'Arial Narrow', Arial, sans-serif;
+  --font-serif: var(--font-helvetica-condensed), 'Arial Narrow', Arial, sans-serif;
+  --font-sans: var(--font-helvetica-condensed), 'Arial Narrow', Arial, sans-serif;
   
   /* Layout Constants */
   --header-height: 80px;
@@ -48,7 +48,7 @@ body {
   background-color: var(--site-paper);
   color: var(--site-ink);
   font-family: var(--font-sans);
-  font-weight: 450;
+  font-weight: 400;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -75,7 +75,7 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
-  font-weight: 450;
+  font-weight: 400;
   letter-spacing: -0.03em;
   text-transform: none;
 }
