@@ -1,7 +1,5 @@
 /* Custom Design System for Manuel Cruchinho (MC Portfolio) */
 
-@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,450,500&display=swap');
-
 :root {
   --site-ink: #101010;
   --site-paper: #efeeeb;
@@ -26,8 +24,8 @@
   --glass-bg: rgba(244, 240, 234, 0.65);
   
   /* Fonts */
-  --font-serif: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-sans: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Swis721 Cn BT', 'Swiss 721', 'Arial Narrow', Arial, sans-serif;
+  --font-sans: 'Swis721 Cn BT', 'Swiss 721', 'Arial Narrow', Arial, sans-serif;
   
   /* Layout Constants */
   --header-height: 80px;

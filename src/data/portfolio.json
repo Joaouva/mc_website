@@ -76,6 +76,106 @@
         "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200",
         "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200"
       ]
+    },
+    {
+      "slug": "casa-da-vinha",
+      "title": "Casa da Vinha",
+      "category": "residential",
+      "year": "2025",
+      "location": "Azeitão, Portugal",
+      "description": "Uma casa de fim de semana organizada entre a vinha, a sombra e a paisagem distante.",
+      "tags": ["Residential", "Landscape", "New Build"],
+      "images": ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200", "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200"]
+    },
+    {
+      "slug": "apartamento-estrela",
+      "title": "Apartamento Estrela",
+      "category": "interior",
+      "year": "2025",
+      "location": "Lisboa, Portugal",
+      "description": "Reabilitação de um apartamento onde os materiais existentes definem o novo desenho.",
+      "tags": ["Interior Design", "Renovation"],
+      "images": ["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200", "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200"]
+    },
+    {
+      "slug": "patio-do-sul",
+      "title": "Pátio do Sul",
+      "category": "residential",
+      "year": "2024",
+      "location": "Faro, Portugal",
+      "description": "Uma sequência de pátios regula a luz, a privacidade e a vida exterior.",
+      "tags": ["Residential", "Courtyard", "Climate"],
+      "images": ["https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200", "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200"]
+    },
+    {
+      "slug": "atelier-alfama",
+      "title": "Atelier Alfama",
+      "category": "interior",
+      "year": "2024",
+      "location": "Lisboa, Portugal",
+      "description": "Um espaço de trabalho compacto, aberto à rua e preparado para mudar com os seus ocupantes.",
+      "tags": ["Workspace", "Interior Design"],
+      "images": ["https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200", "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200"]
+    },
+    {
+      "slug": "largo-do-mercado",
+      "title": "Largo do Mercado",
+      "category": "urban",
+      "year": "2024",
+      "location": "Setúbal, Portugal",
+      "description": "Uma proposta para devolver sombra, permanência e continuidade pedonal ao centro da cidade.",
+      "tags": ["Urban Planning", "Public Space"],
+      "images": ["https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200", "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200"]
+    },
+    {
+      "slug": "casa-do-pomar",
+      "title": "Casa do Pomar",
+      "category": "residential",
+      "year": "2023",
+      "location": "Évora, Portugal",
+      "description": "Uma ampliação discreta que orienta a casa para o pomar e para o ciclo das estações.",
+      "tags": ["Residential", "Extension", "Landscape"],
+      "images": ["https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200", "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200"]
+    },
+    {
+      "slug": "loja-campo-de-ourique",
+      "title": "Loja Campo de Ourique",
+      "category": "interior",
+      "year": "2023",
+      "location": "Lisboa, Portugal",
+      "description": "Um interior comercial calmo, construído através de planos de madeira e luz indireta.",
+      "tags": ["Retail", "Interior Design"],
+      "images": ["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200", "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200"]
+    },
+    {
+      "slug": "casa-da-arriba",
+      "title": "Casa da Arriba",
+      "category": "residential",
+      "year": "2023",
+      "location": "Ericeira, Portugal",
+      "description": "Uma casa baixa, protegida do vento, que acompanha a linha da arriba.",
+      "tags": ["Residential", "Coastal", "New Build"],
+      "images": ["https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200", "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200"]
+    },
+    {
+      "slug": "jardim-da-ribeira",
+      "title": "Jardim da Ribeira",
+      "category": "urban",
+      "year": "2022",
+      "location": "Coimbra, Portugal",
+      "description": "Infraestrutura verde para aproximar a margem do rio da vida quotidiana da cidade.",
+      "tags": ["Landscape", "Public Space", "Urban Planning"],
+      "images": ["https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200", "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200"]
+    },
+    {
+      "slug": "casa-do-monte",
+      "title": "Casa do Monte",
+      "category": "residential",
+      "year": "2022",
+      "location": "Monsaraz, Portugal",
+      "description": "Um refúgio em taipa e madeira, desenhado para a amplitude do Alentejo.",
+      "tags": ["Residential", "Rural", "Sustainable"],
+      "images": ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200", "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200"]
     }
   ],
   "team": [
