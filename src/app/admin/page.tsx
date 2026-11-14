@@ -1,15 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './admin.module.css';
 import portfolioData from '@/data/portfolio.json';
 import { PortfolioData, Project, GeneralInfo, ContactInfo } from '@/data/types';
+import { createClient } from '@/lib/supabase/client';
 
 export default function AdminPage() {
-  // 1. Passphrase Barrier State
-  const [passphrase, setPassphrase] = useState('');
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [loginError, setLoginError] = useState('');
+  const router = useRouter();
 
   // 2. CMS Working Data State (Loaded from JSON)
   const [data, setData] = useState<PortfolioData>({
@@ -38,16 +37,10 @@ export default function AdminPage() {
     }
   }, []);
 
-  // Simple, elegant passphrase validation check
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Default security key (simple, zero-cost developer gate)
-    if (passphrase === 'arquitetura' || passphrase === 'mcaStudio') {
-      setIsAuthenticated(true);
-      setLoginError('');
-    } else {
-      setLoginError('Incorreto. Por favor tente novamente.');
-    }
+  const handleSignOut = async () => {
+    await createClient().auth.signOut();
+    router.replace('/admin/login');
+    router.refresh();
   };
 
   // General & Contact inputs handlers
@@ -241,52 +234,6 @@ export default function AdminPage() {
     downloadAnchor.remove();
   };
 
-  // Passphrase Barrier lock screen UI
-  if (!isAuthenticated) {
-    return (
-      <div className={`${styles.lockScreen} animate-slide-up`}>
-        <div style={{
-          width: '40px',
-          height: '40px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderRadius: '50%',
-          backgroundColor: 'var(--accent-terracotta)',
-          color: 'white',
-          fontSize: '1rem',
-          margin: '0 auto 20px auto'
-        }}>
-          🔒
-        </div>
-        <h1>MCA Studio CMS</h1>
-        <p>Introduza a palavra-passe para aceder ao editor visual.</p>
-        
-        <form onSubmit={handleLogin} className="form-fields" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          <div className="form-group" style={{ textAlign: 'left' }}>
-            <input
-              type="password"
-              required
-              value={passphrase}
-              onChange={(e) => setPassphrase(e.target.value)}
-              className="form-input"
-              placeholder="Palavra-passe (ex: arquitetura)"
-              style={{ textAlign: 'center' }}
-            />
-          </div>
-          {loginError && (
-            <p style={{ color: 'var(--accent-terracotta)', fontSize: '0.75rem', marginTop: '-8px' }}>
-              {loginError}
-            </p>
-          )}
-          <button type="submit" className="btn-terracotta" style={{ width: '100%' }}>
-            Aceder ao Editor
-          </button>
-        </form>
-      </div>
-    );
-  }
-
   const selectedProject = data.projects[selectedProjectIndex];
 
   return (
@@ -326,6 +273,9 @@ export default function AdminPage() {
         </div>
 
         <div className={styles.headerActions}>
+          <button onClick={handleSignOut} className="btn-minimal" style={{ fontSize: '0.8rem', padding: '10px 20px' }}>
+            Terminar sessão
+          </button>
           <button onClick={exportJsonConfig} className="btn-minimal" style={{ fontSize: '0.8rem', padding: '10px 20px' }}>
             Export JSON
           </button>
