@@ -36,10 +36,10 @@ export default function PracticePage() {
 
         {/* Biography texts */}
         <div className={styles.bioContent}>
-          <p style={{ fontSize: '0.75rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--accent-terracotta)', marginBottom: '-16px' }}>
+          <p style={{ fontSize: '0.75rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--site-muted)', marginBottom: '-16px' }}>
             About the Architect
           </p>
-          <h1 className="serif-title" style={{ fontSize: '3rem', color: 'var(--text-charcoal)' }}>
+          <h1 className="serif-title" style={{ fontSize: '3rem', color: 'var(--site-ink)' }}>
             Manuel Cruchinho
           </h1>
           

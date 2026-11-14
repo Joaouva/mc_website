@@ -11,7 +11,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--accent-terracotta);
+  color: var(--site-muted);
   margin-bottom: 12px;
 }
 
@@ -73,8 +73,8 @@
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid var(--border-medium);
-  box-shadow: 0 10px 30px rgba(42, 38, 33, 0.05);
+  border: 1px solid var(--site-rule);
+  box-shadow: 0 10px 30px rgba(16, 16, 16, 0.05);
 }
 
 .photo {
@@ -91,7 +91,7 @@
 .name {
   font-size: 1.05rem;
   font-weight: 500;
-  color: var(--text-charcoal);
+  color: var(--site-ink);
   margin-bottom: 4px;
 }
 
@@ -100,12 +100,12 @@
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent-terracotta);
+  color: var(--site-ink);
   margin-bottom: 10px;
 }
 
 .roleInactive {
-  color: var(--text-charcoal-muted);
+  color: var(--site-muted);
 }
 
 .formerBadge {
@@ -113,8 +113,8 @@
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-charcoal-muted);
-  border: 1px solid var(--border-medium);
+  color: var(--site-muted);
+  border: 1px solid var(--site-rule);
   border-radius: 20px;
   padding: 3px 12px;
   margin-bottom: 14px;
@@ -123,6 +123,6 @@
 .bio {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: var(--text-charcoal-muted);
+  color: var(--site-muted);
   max-width: 260px;
 }

@@ -1,10 +1,9 @@
 import type { NextConfig } from "next";
 
-// GitHub Pages serves this repository below `/mc_website`, whereas Vercel
-// serves the project from the domain root. `basePath` is baked in at build
-// time, so it must not be set for Vercel builds.
-const isVercel = process.env.VERCEL === '1';
-const basePath = isVercel ? '' : '/mc_website';
+// GitHub Pages serves this repository below `/mc_website`; local and Vercel
+// previews serve it from the domain root. `basePath` is baked in at build time.
+const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === 'true';
+const basePath = isGitHubPagesBuild ? '/mc_website' : '';
 
 const nextConfig: NextConfig = {
   output: 'export', // Enables static HTML export, generating './out'
